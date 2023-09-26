@@ -70,7 +70,7 @@ module diagnosticDependencies '../../../../.shared/.templates/diagnostic.depende
 // Test Execution //
 // ============== //
 
-module testDeployment '../../../main.bicep' = [for iteration in [ 'init', 'idem' ]: {
+module testDeployment '../../main.bicep' = [for iteration in [ 'init', 'idem' ]: {
   scope: resourceGroup
   name: '${uniqueString(deployment().name, location)}-test-${serviceShort}-${iteration}'
   params: {
